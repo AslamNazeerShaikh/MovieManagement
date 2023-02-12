@@ -6,6 +6,37 @@ Based on the DDD model, we've created onion architecture (aka hexagonal or clean
 
 ![MovieManagement Repository Cover Page](https://github.com/AslamNazeerShaikh/MovieManagement/blob/development/Images%20&%20Documents/0.png)
 
+
+# Project Structure & High-Level Overview
+
+**Project Prerequisites:**
+
+ - Other:
+   - DotNet SDK 7.0 or Above
+   - Good Internet Connection
+
+ - IDE:
+   - Visual Studio 2022
+   - Visual Studio Code
+   - JetBrains Rider 2022.3
+
+ - Packages:
+     - Microsoft.AspNetCore.OpenApi  `Version="7.0.2"`
+     - Microsoft.EntityFrameworkCore  `Version="7.0.2"`
+     - Microsoft.EntityFrameworkCore.Design  `Version="7.0.2"`
+     - Microsoft.EntityFrameworkCore.Tools  `Version="7.0.2"`
+     - Swashbuckle.AspNetCore  `Version="6.4.0"`
+     - Microsoft.EntityFrameworkCore.Sqlite  `Version="7.0.2"`
+
+**Project Steup:**
+ - Clone the master branch repo: `git clone https://github.com/AslamNazeerShaikh/MovieManagement.git`
+ - Change the current directory to the project directory: `cd .\MovieManagement\`
+ - Restore the .NET packages and project dependencies: `dotnet restore`
+ - Now change the current directory to startup project directory: `cd .\MovieManagement.WebApi\`
+ - To run the project execute the command: `dotnet run`
+
+![Project Structrue](https://github.com/AslamNazeerShaikh/MovieManagement/blob/development/Images%20&%20Documents/5.png)
+
 ## Benefits of Hexagonal or Clean Architecture
 
  - **Plug & play**: We can add or remove adapters based on our development
