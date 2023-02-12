@@ -4,6 +4,8 @@ MovieManagement is a template for creating a hexagonal architecture application 
 
 Based on the DDD model, we've created onion architecture (aka hexagonal or clean architecture). The idea of the Onion Architecture is based on the inversion of control principle, i.e. placing the domain and services layers at the center of your application, externalizing the infrastructure.
 
+![MovieManagement Repository Cover Page](https://github.com/AslamNazeerShaikh/MovieManagement/blob/development/Images%20&%20Documents/0.png)
+
 ## Benefits of Hexagonal or Clean Architecture
 
  - **Plug & play**: We can add or remove adapters based on our development
@@ -21,3 +23,6 @@ Based on the DDD model, we've created onion architecture (aka hexagonal or clean
    easy to implement UI (like React, Angular, or Blazor).
  - **Well organized**: The project is well organized for better understanding
    and for onboarding new joiners to the project.
+
+## Benefits of Repository Design Pattern
+![Benefits of Repository Design Pattern](https://github.com/AslamNazeerShaikh/MovieManagement/blob/development/Images%20&%20Documents/1.png)
