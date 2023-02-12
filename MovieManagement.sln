@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33213.308
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieManagement.WebApi", "MovieManagement.WebApi\MovieManagement.WebApi.csproj", "{6338D632-4619-41D8-B728-D54A77F4AE07}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieManagement.Domain", "MovieManagement.Domain\MovieManagement.Domain.csproj", "{D73AEF11-46AE-4453-B59F-4D509BB7DA16}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieManagement.DataAccess", "MovieManagement.DataAccess\MovieManagement.DataAccess.csproj", "{F2363447-8715-4E9D-A0BB-68F2B6E3F9FB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6338D632-4619-41D8-B728-D54A77F4AE07}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6338D632-4619-41D8-B728-D54A77F4AE07}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6338D632-4619-41D8-B728-D54A77F4AE07}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6338D632-4619-41D8-B728-D54A77F4AE07}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D73AEF11-46AE-4453-B59F-4D509BB7DA16}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D73AEF11-46AE-4453-B59F-4D509BB7DA16}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D73AEF11-46AE-4453-B59F-4D509BB7DA16}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D73AEF11-46AE-4453-B59F-4D509BB7DA16}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F2363447-8715-4E9D-A0BB-68F2B6E3F9FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F2363447-8715-4E9D-A0BB-68F2B6E3F9FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F2363447-8715-4E9D-A0BB-68F2B6E3F9FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F2363447-8715-4E9D-A0BB-68F2B6E3F9FB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4C149A88-2F78-4D3F-98FE-4B2FD4567469}
+	EndGlobalSection
+EndGlobal
