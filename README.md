@@ -9,6 +9,9 @@ Based on the DDD model, we've created onion architecture (aka hexagonal or clean
 
 # Project Structure & High-Level Overview
 
+![Project Structrue](https://github.com/AslamNazeerShaikh/MovieManagement/blob/development/Images%20&%20Documents/5.png)
+
+
 **Project Prerequisites:**
 
  - Other:
@@ -35,8 +38,6 @@ Based on the DDD model, we've created onion architecture (aka hexagonal or clean
  - Now change the current directory to startup project directory: `cd .\MovieManagement.WebApi\`
  - To run the project execute the command: `dotnet run`
 
-![Project Structrue](https://github.com/AslamNazeerShaikh/MovieManagement/blob/development/Images%20&%20Documents/5.png)
-
 ## Benefits of Hexagonal or Clean Architecture
 
  - **Plug & play**: We can add or remove adapters based on our development
@@ -57,3 +58,15 @@ Based on the DDD model, we've created onion architecture (aka hexagonal or clean
 
 ## Benefits of Repository Design Pattern
 ![Benefits of Repository Design Pattern](https://github.com/AslamNazeerShaikh/MovieManagement/blob/development/Images%20&%20Documents/1.png)
+
+**Benefits of Repository Pattern**
+1.  It centralizes data logic or business logic and service logic.
+2.  It gives a substitution point for the unit tests.
+3.  Provides a flexible architecture.
+4.  If you want to modify the data access logic or business access logic, you don’t need to change the repository logic.
+
+**Benefits of Generic Repository Pattern**
+1.  It reduces redundancy of code.
+2.  It force programmer to work using the same pattern.
+3.  It creates possibility of less error.
+4.  If you use this pattern then it is easy to maintain the centralized data access logic.
