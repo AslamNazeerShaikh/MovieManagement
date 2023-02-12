@@ -9,6 +9,8 @@ Based on the DDD model, we've created onion architecture (aka hexagonal or clean
 
 # Project Structure & High-Level Overview
 
+A cross-platform C# application. The MovieManagement solution contains a total of 3 projects out of which 2 are types of C# Class Library. The Project `MovieManagement.Domain`  is the core project of this solution containing Bussines Logic Layer: 1. `Entities` & 2. `Repository` and project `MovieManagement.DataAccess` is the outer layer of this solution, it depended on the domain project and contains 1. `Local Database files`, 2. `Database Context`, 3. `EF Core Migrations` & 4. `Concrete  Implementations`. The `MovieManagement.WebAPI` is the startup project of this solution containing Application Logic Layer: 1. `Controllers`, 2. `Action Methods`, 3. `Connection Strings` & 4. `Startup Logic`.
+ 
 ![Project Structrue](https://github.com/AslamNazeerShaikh/MovieManagement/blob/development/Images%20&%20Documents/5.png)
 
 
@@ -57,7 +59,8 @@ Based on the DDD model, we've created onion architecture (aka hexagonal or clean
    and for onboarding new joiners to the project.
 
 ## Repository Design Pattern
-![Benefits of Repository Design Pattern](https://github.com/AslamNazeerShaikh/MovieManagement/blob/development/Images%20&%20Documents/1.png)
+
+![What is Repository Pattern](https://github.com/AslamNazeerShaikh/MovieManagement/blob/development/Images%20&%20Documents/2.png)
 
 **Benefits of Repository Pattern**
 1.  It centralizes data logic or business logic and service logic.
@@ -71,12 +74,13 @@ Based on the DDD model, we've created onion architecture (aka hexagonal or clean
 3.  It creates possibility of less error.
 4.  If you use this pattern then it is easy to maintain the centralized data access logic. 
 
-![What is Repository Pattern](https://github.com/AslamNazeerShaikh/MovieManagement/blob/development/Images%20&%20Documents/2.png)
+![Benefits of Repository Design Pattern](https://github.com/AslamNazeerShaikh/MovieManagement/blob/development/Images%20&%20Documents/1.png)
+
 
 ## Unit of Work Pattern 
 The unit of work class serves one purpose: to make sure that when you use multiple repositories, they share a single database context. That way, when a unit of work is complete you can call the SaveChanges method on that instance of the context and be assured that all related changes will be coordinated.
 
-![Benefits of Unit Of Work](https://github.com/AslamNazeerShaikh/MovieManagement/blob/development/Images%20&%20Documents/3.png)
+![Diagram of Unit Of Work](https://github.com/AslamNazeerShaikh/MovieManagement/blob/development/Images%20&%20Documents/4.png)
 
  ## Consequences of the Unit of Work Pattern
 -   Increases the level of abstraction and keep business logic free of data access code
@@ -84,4 +88,7 @@ The unit of work class serves one purpose: to make sure that when you use multip
 -   More classes and interfaces but less duplicated code
 -   The business logic is further away from the data because the repository abstracts the infrastructure. This has the effect that it might be harder to optimize certain operations which are performed against the data source.
 
-![Diagram of Unit Of Work](https://github.com/AslamNazeerShaikh/MovieManagement/blob/development/Images%20&%20Documents/4.png)
+![Benefits of Unit Of Work](https://github.com/AslamNazeerShaikh/MovieManagement/blob/development/Images%20&%20Documents/3.png)
+
+### Contribute
+As a free and open-source project, we are very grateful to everyone who helps us to develop this project.
