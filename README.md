@@ -56,7 +56,7 @@ Based on the DDD model, we've created onion architecture (aka hexagonal or clean
  - **Well organized**: The project is well organized for better understanding
    and for onboarding new joiners to the project.
 
-## Benefits of Repository Design Pattern
+## Repository Design Pattern
 ![Benefits of Repository Design Pattern](https://github.com/AslamNazeerShaikh/MovieManagement/blob/development/Images%20&%20Documents/1.png)
 
 **Benefits of Repository Pattern**
@@ -69,4 +69,19 @@ Based on the DDD model, we've created onion architecture (aka hexagonal or clean
 1.  It reduces redundancy of code.
 2.  It force programmer to work using the same pattern.
 3.  It creates possibility of less error.
-4.  If you use this pattern then it is easy to maintain the centralized data access logic.
+4.  If you use this pattern then it is easy to maintain the centralized data access logic. 
+
+![What is Repository Pattern](https://github.com/AslamNazeerShaikh/MovieManagement/blob/development/Images%20&%20Documents/2.png)
+
+## Unit of Work Pattern 
+The unit of work class serves one purpose: to make sure that when you use multiple repositories, they share a single database context. That way, when a unit of work is complete you can call the SaveChanges method on that instance of the context and be assured that all related changes will be coordinated.
+
+![Benefits of Unit Of Work](https://github.com/AslamNazeerShaikh/MovieManagement/blob/development/Images%20&%20Documents/3.png)
+
+ ## Consequences of the Unit of Work Pattern
+-   Increases the level of abstraction and keep business logic free of data access code
+-   Increased maintainability, flexibility and testability
+-   More classes and interfaces but less duplicated code
+-   The business logic is further away from the data because the repository abstracts the infrastructure. This has the effect that it might be harder to optimize certain operations which are performed against the data source.
+
+![Diagram of Unit Of Work](https://github.com/AslamNazeerShaikh/MovieManagement/blob/development/Images%20&%20Documents/4.png)
