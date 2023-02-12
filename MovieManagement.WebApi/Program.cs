@@ -1,5 +1,8 @@
 using Microsoft.EntityFrameworkCore;
+
 using MovieManagement.DataAccess.Context;
+using MovieManagement.DataAccess.Implementation;
+using MovieManagement.Domain.Repository;
 
 namespace MovieManagement.WebApi
 {
@@ -14,10 +17,12 @@ namespace MovieManagement.WebApi
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
 
-            // Add Entity Framework Core
-            // Add SQLite Service to DI
+            // Add Entity Framework Core DbContext & SQLite Service to DI
             builder.Services.AddDbContext<ApplicationDbContext>(options =>
             options.UseSqlite(builder.Configuration.GetConnectionString("WebApiDatabase")));
+
+            // Add services to DI
+            builder.Services.AddTransient<IUnitOfWork, UnitOfWork>();
 
             var app = builder.Build();
 
