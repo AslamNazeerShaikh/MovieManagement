@@ -29,7 +29,7 @@ A cross-platform C# application. The MovieManagement solution contains a total o
  - IDE:
    - Visual Studio 2022
    - Visual Studio Code
-   - JetBrains Rider 2022.3
+   - JetBrains Rider 2023
 
  - Packages:
      - Microsoft.AspNetCore.OpenApi  `Version="7.0.2"`
