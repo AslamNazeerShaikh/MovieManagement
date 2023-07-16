@@ -11,11 +11,11 @@ Based on the DDD model, we've created onion architecture (aka hexagonal or clean
 
 A cross-platform C# application. The MovieManagement solution contains a total of 3 projects out of which 2 are types of C# Class Library. The Project 
 
-`MovieManagement.Domain` is the core project of this solution containing Bussines Logic Layer: 1. `Entities` & 2. `Repository` and project 
+`[MovieManagement.Domain]` is the core project of this solution containing Bussines Logic Layer: 1. `Entities` & 2. `Repository`. 
 
-`MovieManagement.DataAccess` is the outer layer of this solution, it depended on the domain project and contains 1. `Local Database files`, 2. `Database Context`, 3. `EF Core Migrations` & 4. `Concrete  Implementations`.
+`[MovieManagement.DataAccess]` is the outer layer of this solution, it depended on the domain project and contains 1. `Local Database files`, 2. `Database Context`, 3. `EF Core Migrations` & 4. `Concrete  Implementations`.
 
-`MovieManagement.WebAPI` is the startup project of this solution containing Application Logic Layer: 1. `Controllers`, 2. `Action Methods`, 3. `Connection Strings` & 4. `Startup Logic`.
+`[MovieManagement.WebAPI]` is the startup project of this solution containing Application Logic Layer: 1. `Controllers`, 2. `Action Methods`, 3. `Connection Strings` & 4. `Startup Logic`.
  
 ![Project Structrue](https://github.com/AslamNazeerShaikh/MovieManagement/blob/development/Images%20&%20Documents/5.png)
 
