@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieManagement.Core", "Mov
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieManagement.Data", "MovieManagement.Data\MovieManagement.Data.csproj", "{A59BA0DE-C24F-4D56-A30E-FCAEBD214881}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieManagement.Services", "MovieManagement.Services\MovieManagement.Services.csproj", "{854A8ADA-A330-4954-8961-C5E08210AC86}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{A59BA0DE-C24F-4D56-A30E-FCAEBD214881}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A59BA0DE-C24F-4D56-A30E-FCAEBD214881}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A59BA0DE-C24F-4D56-A30E-FCAEBD214881}.Release|Any CPU.Build.0 = Release|Any CPU
+		{854A8ADA-A330-4954-8961-C5E08210AC86}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{854A8ADA-A330-4954-8961-C5E08210AC86}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{854A8ADA-A330-4954-8961-C5E08210AC86}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{854A8ADA-A330-4954-8961-C5E08210AC86}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

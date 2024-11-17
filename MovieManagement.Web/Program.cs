@@ -1,3 +1,10 @@
+using Microsoft.EntityFrameworkCore;
+using MovieManagement.Core.Repositories;
+using MovieManagement.Data.Context;
+using MovieManagement.Data.Repositories;
+using MovieManagement.Services.Logging;
+using Serilog;
+
 namespace MovieManagement.Web
 {
     public class Program
@@ -6,8 +13,14 @@ namespace MovieManagement.Web
         {
             var builder = WebApplication.CreateBuilder(args);
 
+            LoggerService.ConfigureLogger();
+            builder.Host.UseSerilog();
+
             // Add services to the container.
             builder.Services.AddControllersWithViews();
+            builder.Services.AddDbContext<ApplicationDbContext>(options =>
+                    options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
+            builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 
             var app = builder.Build();
 
@@ -15,7 +28,7 @@ namespace MovieManagement.Web
             if (!app.Environment.IsDevelopment())
             {
                 app.UseExceptionHandler("/Home/Error");
-                // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
+                // The default HSTS value is 30 days. 
                 app.UseHsts();
             }
 
