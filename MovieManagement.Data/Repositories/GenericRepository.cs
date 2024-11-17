@@ -43,7 +43,19 @@ namespace MovieManagement.Data.Repositories
             return entity;
         }
 
-        public async Task AddAsync(T entity) => await _dbSet.AddAsync(entity);
+        public async Task AddAsync(T entity)
+        {
+            try
+            {
+                // Add the new entity to the context
+                await _dbSet.AddAsync(entity);
+            }
+            catch (Exception ex)
+            {
+                // Log the exception or handle it as per your requirement
+                throw new InvalidOperationException("An error occurred while adding the entity.", ex);
+            }
+        }
 
         public Task UpdateAsync(T entity)
         {
@@ -52,7 +64,7 @@ namespace MovieManagement.Data.Repositories
                 // Mark the entity as modified
                 _dbSet.Update(entity);
             }
-            catch (DbUpdateConcurrencyException ex)
+            catch (Exception ex)
             {
                 // Handle concurrency issues here
                 throw new InvalidOperationException("The entity was updated by another user.", ex);
