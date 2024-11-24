@@ -1,3 +1,6 @@
+using Microsoft.EntityFrameworkCore;
+using MovieManagement.Infrastructure;
+
 namespace MovieManagement.WebUi;
 
 public class Program
@@ -8,6 +11,9 @@ public class Program
 
         // Add services to the container.
         builder.Services.AddControllersWithViews();
+
+        builder.Services.AddDbContext<AppDbContext>(options =>
+            options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
 
         var app = builder.Build();
 
