@@ -1,9 +1,12 @@
-    ~/Documents/Projects/MovieManagement on    development ❯ ls                                                                                                                    at   01:16:01 AM
+$ ls
 CODE_OF_CONDUCT.md  LICENSE.md                   MovieManagement.DataAccess  MovieManagement.Infrastructure  MovieManagement.WebApi  README.md
 docs                MovieManagement.Application  MovieManagement.Domain      MovieManagement.sln             MovieManagement.WebUi   SECURITY.md
-    ~/Documents/Projects/MovieManagement on    development ❯ pwd                                                                                                                   at   01:16:13 AM
+
+$ pwd
 /home/aslamshaikh/Documents/Projects/MovieManagement
-    ~/Documents/Projects/MovieManagement on    development ❯ dotnet list package                                                                                                   at   01:16:19 AM
+
+$ dotnet list package
+
 Project 'MovieManagement.Domain' has the following package references
    [net9.0]: No packages were found for this framework.
 Project 'MovieManagement.Application' has the following package references
@@ -21,7 +24,7 @@ Project 'MovieManagement.WebUi' has the following package references
    > Microsoft.EntityFrameworkCore.Design          9.0.2       9.0.2
    > Microsoft.EntityFrameworkCore.Relational      9.0.2       9.0.2
 
-    ~/Documents/Projects/MovieManagement on    development ❯ dotnet list package --outdated                                                                                        at   01:16:22 AM
+$ dotnet list package --outdated
 
 The following sources were used:
    https://api.nuget.org/v3/index.json
@@ -30,6 +33,6 @@ The given project `MovieManagement.Domain` has no updates given the current sour
 The given project `MovieManagement.Application` has no updates given the current sources.
 The given project `MovieManagement.Infrastructure` has no updates given the current sources.
 The given project `MovieManagement.WebUi` has no updates given the current sources.
-    ~/Documents/Projects/MovieManagement on    development ❯ date                                                                                                      took   10s at   01:17:44 AM
+
+$ date
 Wed Feb 19 01:18:18 AM IST 2025
-    ~/Documents/Projects/MovieManagement on    development ❯                                                                                                                       at   01:18:18 AM
