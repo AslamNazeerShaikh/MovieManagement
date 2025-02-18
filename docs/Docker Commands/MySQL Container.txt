@@ -1,0 +1,25 @@
+Bash:
+
+docker run -d \
+  --name my-sql-container \
+  -e MYSQL_ROOT_PASSWORD=Aslam@12345 \
+  -p 3306:3306 \
+  -v my-sql-volume:/var/lib/mysql \
+  mysql:latest
+
+Powershell:
+
+docker run -d `
+  --name my-sql-container `
+  -e MYSQL_ROOT_PASSWORD=Aslam@12345 `
+  -p 3306:3306 `
+  -v my-sql-volume:/var/lib/mysql `
+  mysql:latest
+
+Connection String:
+
+{
+  "ConnectionStrings": {
+    "DefaultConnection": "server=127.0.0.1;port=3306;database=moviedb;user=root;password=Aslam@12345;"
+  }
+}
