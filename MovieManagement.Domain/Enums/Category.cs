@@ -8,6 +8,6 @@ namespace MovieManagement.Domain.Enums
 {
     public enum Category
     {
-        Science, Technology, Fitness, Tarvel
+        Science = 1, Technology, Fitness, Tarvel
     }
 }

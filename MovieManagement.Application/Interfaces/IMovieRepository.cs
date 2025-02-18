@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using MovieManagement.Domain.Entities;
 
 namespace MovieManagement.Application.Interfaces
 {
     public interface IMovieRepository
     {
+        public Task AddAsync(Movie movie);
     }
 }

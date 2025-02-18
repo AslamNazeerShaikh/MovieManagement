@@ -1,0 +1,73 @@
+﻿@page "/add-new"
+@inject IMovieRepository Repository
+@inject NavigationManager Navigation
+
+<PageTitle>
+    Add New Movie
+</PageTitle>
+
+<div class="row justify-content-center">
+    <div class="col-6">
+        <EditForm Enhance="true" class="border rounded p-2" method="post" FormName="AddMovieForm" OnValidSubmit="AddMovie" Model="Movie" autocomplete="off">
+            <h3>
+                Add New Movie
+            </h3>
+            <div class="mb-3">
+                <lable for="title" class="form-label">
+                    Title
+                </lable>
+                <InputText id="title" @bind-Value="Movie.MovieName" class="form-control">
+                </InputText>
+            </div>
+            <div class="mb-3">
+                <lable for="author" class="form-label">
+                    Author
+                </lable>
+                <InputText id="author" @bind-Value="Movie.MovieAuthor" class="form-control">
+                </InputText>
+            </div>
+            <div class="mb-3">
+                <lable for="publishdate" class="form-label">
+                    Publish Date
+                </lable>
+                <InputDate id="publishdate" @bind-Value="Movie.PublishDate" class="form-control">
+                </InputDate>
+            </div>
+            <div class="mb-3">
+                <lable for="category" class="form-label">
+                    Category
+                </lable>
+                <InputSelect id="category" @bind-Value="Movie.Category" class="form-control">
+                    <option value="0">
+                        Select Category
+                    </option>
+                    @foreach (var category in Enum.GetValues(typeof(Category)))
+                    {
+                        <option value="@category">
+                            @category.ToString()
+                        </option>
+                    }
+                </InputSelect>
+            </div>
+            <div class="mb-3">
+                <button class="btn btn-primary">
+                    Submit
+                </button>
+            </div>
+            <DataAnnotationsValidator />
+            <ValidationSummary />
+        </EditForm>
+    </div>
+</div>
+
+@code {
+
+    [SupplyParameterFromForm]
+    public Movie Movie { get; set; } = new();
+
+    private async Task AddMovie()
+    {
+        await Repository.AddAsync(Movie);
+        Navigation.NavigateTo("/");
+    }
+}

@@ -1,5 +1,7 @@
 using Microsoft.EntityFrameworkCore;
+using MovieManagement.Application.Interfaces;
 using MovieManagement.Infrastructure.Context;
+using MovieManagement.Infrastructure.Repositories;
 using MovieManagement.WebUi.Components;
 
 namespace MovieManagement.WebUi;
@@ -16,6 +18,8 @@ public class Program
 
         builder.Services.AddDbContextFactory<AppDbContext>(options =>
         options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+        builder.Services.AddScoped<IMovieRepository, MovieRepository>();
 
         var app = builder.Build();
 
