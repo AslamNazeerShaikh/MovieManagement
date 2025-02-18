@@ -1,0 +1,6 @@
+$ pwd
+/home/aslamshaikh/Documents/Projects/MovieManagement/MovieManagement.Infrastructure
+
+$ dotnet ef migrations add InitialCreate --project ./MovieManagement.Infrastructure.csproj --startup-project ../MovieManagement.WebUi/MovieManagement.WebUi.csproj
+
+$ dotnet ef database update --project ./MovieManagement.Infrastructure.csproj --startup-project ../MovieManagement.WebUi/MovieManagement.WebUi.csproj

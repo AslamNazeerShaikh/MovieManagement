@@ -19,9 +19,4 @@
     <ProjectReference Include="..\MovieManagement.Application\MovieManagement.Application.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Migrations\" />
-    <Folder Include="Database\" />
-  </ItemGroup>
-
 </Project>

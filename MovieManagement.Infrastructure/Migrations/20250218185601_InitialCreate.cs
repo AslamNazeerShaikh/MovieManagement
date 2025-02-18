@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace MovieManagement.Infrastructure.Migrations
 {
     /// <inheritdoc />
-    public partial class Initial_Migration : Migration
+    public partial class InitialCreate : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -19,8 +19,8 @@ namespace MovieManagement.Infrastructure.Migrations
                         .Annotation("Sqlite:Autoincrement", true),
                     MovieName = table.Column<string>(type: "TEXT", maxLength: 255, nullable: false),
                     MovieAuthor = table.Column<string>(type: "TEXT", maxLength: 255, nullable: false),
-                    PublishDate = table.Column<DateTime>(type: "TEXT", nullable: true),
-                    Category = table.Column<string>(type: "TEXT", nullable: false)
+                    PublishDate = table.Column<DateTime>(type: "TEXT", nullable: false),
+                    Category = table.Column<int>(type: "INTEGER", nullable: false)
                 },
                 constraints: table =>
                 {
