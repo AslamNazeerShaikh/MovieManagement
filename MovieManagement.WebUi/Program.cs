@@ -15,9 +15,7 @@ public class Program
             .AddInteractiveServerComponents();
 
         builder.Services.AddDbContextFactory<AppDbContext>(options =>
-        {
-            options.UseMySQL(builder.Configuration.GetConnectionString("DefaultConnection"));
-        });
+        options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
 
         var app = builder.Build();
 
