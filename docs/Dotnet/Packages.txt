@@ -9,8 +9,10 @@ $ dotnet list package
 
 Project 'MovieManagement.Domain' has the following package references
    [net9.0]: No packages were found for this framework.
+
 Project 'MovieManagement.Application' has the following package references
    [net9.0]: No packages were found for this framework.
+
 Project 'MovieManagement.Infrastructure' has the following package references
    [net9.0]:
    Top-level Package                           Requested   Resolved
