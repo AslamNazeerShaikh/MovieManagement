@@ -1,0 +1,11 @@
+﻿<div class="movie-card">
+    <div class="movie-card-body text-center">
+        <h5>@Movie.MovieName</h5>
+        By @Movie.MovieAuthor | @Movie.PublishDate?.ToString("D")
+    </div>
+</div>
+
+@code {
+    [Parameter]
+    public required Movie Movie { get; set; }
+}

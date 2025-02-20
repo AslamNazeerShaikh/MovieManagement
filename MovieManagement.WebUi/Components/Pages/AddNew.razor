@@ -8,7 +8,8 @@
 
 <div class="row justify-content-center">
     <div class="col-6">
-        <EditForm Enhance="true" class="border rounded p-2" method="post" FormName="AddMovieForm" OnValidSubmit="AddMovie" Model="Movie" autocomplete="off">
+        <EditForm Enhance="true" class="border rounded p-2" method="post"
+                  FormName="AddMovieForm" OnValidSubmit="AddMovie" Model="Movie" autocomplete="off">
             <h3>
                 Add New Movie
             </h3>
@@ -27,10 +28,10 @@
                 </InputText>
             </div>
             <div class="mb-3">
-                <lable for="publishdate" class="form-label">
+                <lable for="published" class="form-label">
                     Publish Date
                 </lable>
-                <InputDate id="publishdate" @bind-Value="Movie.PublishDate" class="form-control">
+                <InputDate id="published" @bind-Value="Movie.PublishDate" class="form-control">
                 </InputDate>
             </div>
             <div class="mb-3">
@@ -49,25 +50,28 @@
                     }
                 </InputSelect>
             </div>
-            <div class="mb-3">
+            <div class="">
                 <button class="btn btn-primary">
                     Submit
                 </button>
+                <a href="/" class="btn btn-secondary">
+                    Back to List
+                </a>
             </div>
-            <DataAnnotationsValidator />
-            <ValidationSummary />
+            <DataAnnotationsValidator/>
+            <ValidationSummary/>
         </EditForm>
     </div>
 </div>
 
 @code {
 
-    [SupplyParameterFromForm]
-    public Movie Movie { get; set; } = new();
+    [SupplyParameterFromForm] public Movie Movie { get; set; } = new();
 
     private async Task AddMovie()
     {
         await Repository.AddAsync(Movie);
         Navigation.NavigateTo("/");
     }
+
 }

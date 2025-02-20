@@ -1,0 +1,41 @@
+﻿@page "/"
+@inject IMovieRepository Repository
+@attribute [StreamRendering]
+
+<PageTitle>Movie List</PageTitle>
+
+<div class="row justify-content-center mt-3">
+    <div class="col-6">
+        <a href="add-new" class="btn btn-primary mb-3">Add New</a>
+        @if (_movies is null)
+        {
+            <div class="movie-item">
+                Loading Movies. Please wait.
+            </div>
+        }
+        else if (_movies.Any())
+        {
+            @foreach (var movie in _movies)
+            {
+                <div class="movie-item">
+                    <MovieCard Movie="movie"></MovieCard>
+                </div>
+            }
+        }
+        else
+        {
+            <div class="movie-item">No Books Found.</div>
+        }
+    </div>
+</div>
+
+@code {
+    private List<Movie>? _movies;
+
+    protected override async Task OnInitializedAsync()
+    {
+        await Task.Delay(3000);
+        _movies = await Repository.GetAllAsync();
+    }
+
+}

@@ -18,5 +18,11 @@ namespace MovieManagement.Infrastructure.Repositories
             _appDbContext.Movies.Add(movie);
             await _appDbContext.SaveChangesAsync();
         }
+
+        public async Task<List<Movie>> GetAllAsync()
+        {
+            var movies = await _appDbContext.Movies.ToListAsync();
+            return movies;
+        }
     }
 }
