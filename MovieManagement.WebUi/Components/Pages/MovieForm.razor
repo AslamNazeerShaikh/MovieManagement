@@ -1,0 +1,93 @@
+﻿@inject IMovieRepository Repository
+
+@if (Movie is not null)
+{
+    <EditForm Enhance="true" class="border rounded p-2" method="post"
+              FormName="AddOrEditMovieForm" OnValidSubmit="AddOrEditMovie" Model="Movie" autocomplete="off">
+        <h3>
+            @Title
+        </h3>
+        @if (IsEditMode)
+        {
+            <input type="hidden" name="Movie.MovieId" value="@Movie.MovieId"/>
+        }
+        <div class="mb-3">
+            <lable for="title" class="form-label">
+                Title
+            </lable>
+            <InputText id="title" @bind-Value="Movie.MovieName" class="form-control">
+            </InputText>
+        </div>
+        <div class="mb-3">
+            <lable for="author" class="form-label">
+                Author
+            </lable>
+            <InputText id="author" @bind-Value="Movie.MovieAuthor" class="form-control">
+            </InputText>
+        </div>
+        <div class="mb-3">
+            <lable for="published" class="form-label">
+                Publish Date
+            </lable>
+            <InputDate id="published" @bind-Value="Movie.PublishDate" class="form-control">
+            </InputDate>
+        </div>
+        <div class="mb-3">
+            <lable for="category" class="form-label">
+                Category
+            </lable>
+            <InputSelect id="category" @bind-Value="Movie.Category" class="form-control">
+                <option value="0">
+                    Select Category
+                </option>
+                @foreach (var category in Enum.GetValues(typeof(Category)))
+                {
+                    <option value="@category">
+                        @category.ToString()
+                    </option>
+                }
+            </InputSelect>
+        </div>
+        <div class="">
+            <button class="btn btn-primary">
+                Submit
+            </button>
+            <a href="/" class="btn btn-secondary">
+                Back to List
+            </a>
+        </div>
+        <DataAnnotationsValidator/>
+        <ValidationSummary/>
+    </EditForm>
+}
+
+@code {
+
+    [Parameter] public bool IsEditMode { get; set; } = false;
+
+    [Parameter] public int MovieId { get; set; }
+    
+    [Parameter] public EventCallback<Movie> OnValidMovieSubmit { get; set; }
+
+    [SupplyParameterFromForm] public Movie? Movie { get; set; }
+
+    public string Title => IsEditMode ? $"Edit Movie {MovieId}" : "Add New Book";
+
+    protected override async Task OnInitializedAsync()
+    {
+        if (IsEditMode)
+        {
+            Movie ??= await Repository.GetByIdAsync(MovieId);
+        }
+        else
+        {
+            Movie ??= new();
+        }
+    }
+
+    private async Task AddOrEditMovie()
+    {
+        await OnValidMovieSubmit.InvokeAsync(Movie);
+    }
+
+}
