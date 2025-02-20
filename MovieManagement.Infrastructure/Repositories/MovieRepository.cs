@@ -13,6 +13,7 @@ namespace MovieManagement.Infrastructure.Repositories
         {
             _appDbContext = dbContextFactory.CreateDbContext();
         }
+
         public async Task AddAsync(Movie movie)
         {
             _appDbContext.Movies.Add(movie);
@@ -35,6 +36,16 @@ namespace MovieManagement.Infrastructure.Repositories
         {
             _appDbContext.Entry(movie).State = EntityState.Modified;
             await _appDbContext.SaveChangesAsync();
+        }
+
+        public async Task DeleteByIdAsync(int id)
+        {
+            var movie = await GetByIdAsync(id);
+            if (movie is not null)
+            {
+                _appDbContext.Movies.Remove(movie);
+                await _appDbContext.SaveChangesAsync();
+            }
         }
     }
 }

@@ -71,7 +71,7 @@
 
     [SupplyParameterFromForm] public Movie? Movie { get; set; }
 
-    public string Title => IsEditMode ? $"Edit Movie {MovieId}" : "Add New Book";
+    public string Title => IsEditMode ? $"Edit Movie {MovieId}" : "Add New Movie";
 
     protected override async Task OnInitializedAsync()
     {

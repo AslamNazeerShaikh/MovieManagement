@@ -1,6 +1,5 @@
 ﻿@page "/"
 @inject IMovieRepository Repository
-@attribute [StreamRendering]
 
 <PageTitle>Movie List</PageTitle>
 
@@ -18,13 +17,13 @@
             @foreach (var movie in _movies)
             {
                 <div class="movie-item">
-                    <MovieCard Movie="movie"></MovieCard>
+                    <MovieCard @rendermode="InteractiveServer" Movie="movie"></MovieCard>
                 </div>
             }
         }
         else
         {
-            <div class="movie-item">No Books Found.</div>
+            <div class="movie-item">No Movies Found.</div>
         }
     </div>
 </div>

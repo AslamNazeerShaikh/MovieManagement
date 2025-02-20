@@ -1,14 +1,44 @@
-﻿<div class="movie-card">
+﻿@inject IMovieRepository Repository
+@inject NavigationManager Navigation
+
+<div class="movie-card">
     <div class="movie-card-body text-center">
         <h5>@Movie.MovieName</h5>
         By @Movie.MovieAuthor | @Movie.PublishDate?.ToString("D")
     </div>
     <div class="actions">
         <a href="@($"/edit/{Movie.MovieId}")" class="btn btn-warning">Edit</a>
+        <button @onclick="OpenConfirmDialog" class="btn btn-danger">
+            Delete
+        </button>
     </div>
 </div>
 
+<ConfirmDialog Show="_showConfirmDialog"
+               OnCancel="CancelDelete"
+               OnOk="DeleteMovie"></ConfirmDialog>
+
 @code {
-    [Parameter]
-    public required Movie Movie { get; set; }
+
+    [Parameter] public required Movie Movie { get; set; }
+
+    private bool _showConfirmDialog;
+
+    private void OpenConfirmDialog()
+    {
+        _showConfirmDialog = true;
+    }
+
+    private void CancelDelete()
+    {
+        _showConfirmDialog = false;
+    }
+
+    private async Task DeleteMovie()
+    {
+        await Repository.DeleteByIdAsync(Movie.MovieId);
+        _showConfirmDialog = false;
+        Navigation.NavigateTo("/");
+    }
+
 }
