@@ -3,6 +3,9 @@
         <h5>@Movie.MovieName</h5>
         By @Movie.MovieAuthor | @Movie.PublishDate?.ToString("D")
     </div>
+    <div class="actions">
+        <a href="@($"/edit/{Movie.MovieId}")" class="btn btn-warning">Edit</a>
+    </div>
 </div>
 
 @code {

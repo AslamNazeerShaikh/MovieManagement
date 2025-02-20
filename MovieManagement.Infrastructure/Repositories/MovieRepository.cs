@@ -24,5 +24,17 @@ namespace MovieManagement.Infrastructure.Repositories
             var movies = await _appDbContext.Movies.ToListAsync();
             return movies;
         }
+
+        public async Task<Movie?> GetByIdAsync(int id)
+        {
+            var movie = await _appDbContext.Movies.FirstOrDefaultAsync(e => e.MovieId == id);
+            return movie;
+        }
+
+        public async Task UpdateAsync(Movie movie)
+        {
+            _appDbContext.Entry(movie).State = EntityState.Modified;
+            await _appDbContext.SaveChangesAsync();
+        }
     }
 }

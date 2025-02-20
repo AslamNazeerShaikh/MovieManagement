@@ -6,5 +6,7 @@ namespace MovieManagement.Application.Interfaces
     {
         public Task AddAsync(Movie movie);
         public Task<List<Movie>> GetAllAsync();
+        public Task<Movie?> GetByIdAsync(int id);
+        public Task UpdateAsync(Movie movie);
     }
 }
