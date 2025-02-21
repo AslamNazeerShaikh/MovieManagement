@@ -16,10 +16,11 @@ public class Program
         builder.Services.AddRazorComponents()
             .AddInteractiveServerComponents();
 
-        builder.Services.AddDbContextFactory<AppDbContext>(options =>
+        builder.Services.AddDbContext<AppDbContext>(options =>
             options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-        builder.Services.AddScoped<IMovieRepository, MovieRepository>();
+        // Add services to DI
+        builder.Services.AddTransient<IUnitOfWork, UnitOfWork>();
 
         var app = builder.Build();
 

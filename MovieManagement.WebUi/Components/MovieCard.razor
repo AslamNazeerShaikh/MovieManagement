@@ -1,4 +1,4 @@
-﻿@inject IMovieRepository Repository
+﻿@inject IUnitOfWork UoW
 @inject NavigationManager Navigation
 
 <div class="movie-card">
@@ -36,7 +36,8 @@
 
     private async Task DeleteMovie()
     {
-        await Repository.DeleteByIdAsync(Movie.MovieId);
+        UoW.Movie.Remove(Movie);
+        await UoW.SaveAsync();
         _showConfirmDialog = false;
         Navigation.NavigateTo("/");
     }

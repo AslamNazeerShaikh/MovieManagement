@@ -1,5 +1,5 @@
 ﻿@page "/edit/{id:int}"
-@inject IMovieRepository Repository
+@inject IUnitOfWork UoW
 @inject NavigationManager Navigation
 
 <PageTitle>Edit Movie</PageTitle>
@@ -16,7 +16,9 @@
 
     private async Task EditMovie(Movie movie)
     {
-        await Repository.UpdateAsync(movie);
+        UoW.Movie.Update(movie);
+        await UoW.SaveAsync();
+        
         Navigation.NavigateTo("/");
     }
 

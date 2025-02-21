@@ -1,4 +1,4 @@
-﻿@inject IMovieRepository Repository
+﻿@inject IUnitOfWork UoW
 
 @if (Movie is not null)
 {
@@ -77,7 +77,7 @@
     {
         if (IsEditMode)
         {
-            Movie ??= await Repository.GetByIdAsync(MovieId);
+            Movie ??= await UoW.Movie.GetByIdAsync(MovieId);
         }
         else
         {

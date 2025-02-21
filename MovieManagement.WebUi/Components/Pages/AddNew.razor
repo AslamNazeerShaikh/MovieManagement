@@ -1,5 +1,5 @@
 ﻿@page "/add-new"
-@inject IMovieRepository Repository
+@inject IUnitOfWork UoW
 @inject NavigationManager Navigation
 
 <PageTitle>
@@ -16,7 +16,8 @@
     
     private async Task AddMovie(Movie movie)
     {
-        await Repository.AddAsync(movie);
+        await UoW.Movie.AddAsync(movie);
+        await UoW.SaveAsync();
         Navigation.NavigateTo("/");
     }
 

@@ -9,9 +9,9 @@ public class GenericRepository<T> : IGenericRepository<T> where T : class
 {
     private readonly AppDbContext _dbContext;
 
-    public GenericRepository(AppDbContext dbContext)
+    protected GenericRepository(AppDbContext appDbContext)
     {
-        _dbContext = dbContext;
+        _dbContext = appDbContext;
     }
 
     public async Task<T?> GetByIdAsync(int id)
@@ -58,5 +58,11 @@ public class GenericRepository<T> : IGenericRepository<T> where T : class
     public void RemoveRange(IEnumerable<T> entities)
     {
         _dbContext.Set<T>().RemoveRange(entities); // RemoveRange does not need to be async
+    }
+
+    public void Update(T entity)
+    {
+        _dbContext.Entry(entity).State =
+            EntityState.Modified; // Mark the entity as modified. No need to call SaveChangesAsync here.
     }
 }

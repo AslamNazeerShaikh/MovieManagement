@@ -1,5 +1,5 @@
 ﻿@page "/"
-@inject IMovieRepository Repository
+@inject IUnitOfWork UoW
 
 <PageTitle>Movie List</PageTitle>
 
@@ -34,7 +34,8 @@
     protected override async Task OnInitializedAsync()
     {
         await Task.Delay(1000);
-        _movies = await Repository.GetAllAsync();
+        var moviesFromRepo = await UoW.Movie.GetAllAsync();
+        _movies = moviesFromRepo.ToList();
     }
 
 }
