@@ -1,0 +1,31 @@
+﻿@if (Show)
+{
+    <div class="confirm-dialog-container">
+        <div class="confirm-dialog">
+            <h3>
+                Are you sure?
+            </h3>
+            @ChildContent
+            <div class="d-flex flex-row justify-content-end mt-3">
+                <button class="btn btn-secondary ms-3" @onclick="OnCancel">
+                    Cancel
+                </button>
+                <button class="btn btn-danger ms-3" @onclick="OnOk">
+                    Delete
+                </button>
+            </div>
+        </div>
+    </div>
+}
+
+@code {
+
+    [Parameter] public bool Show { get; set; }
+
+    [Parameter] public EventCallback OnCancel { get; set; }
+
+    [Parameter] public EventCallback OnOk { get; set; }
+
+    [Parameter] public RenderFragment? ChildContent { get; set; }
+
+}

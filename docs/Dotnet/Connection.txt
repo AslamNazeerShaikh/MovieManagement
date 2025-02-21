@@ -1,0 +1,11 @@
+For SQLITE Local DB on Linux:
+
+"ConnectionStrings": {
+    "DefaultConnection": "Data Source=../MovieManagement.Infrastructure/Database/LocalDatabase.db;Cache=Shared"
+  }
+
+For SQLITE Local DB on Windows:
+
+"ConnectionStrings": {
+    "DefaultConnection": "Data Source=..\\MovieManagement.Infrastructure\\Database\\LocalDatabase.db;Cache=Shared"
+  }

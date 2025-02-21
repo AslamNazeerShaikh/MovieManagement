@@ -17,7 +17,7 @@ public class Program
             .AddInteractiveServerComponents();
 
         builder.Services.AddDbContextFactory<AppDbContext>(options =>
-        options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
+            options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
 
         builder.Services.AddScoped<IMovieRepository, MovieRepository>();
 

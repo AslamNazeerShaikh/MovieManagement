@@ -1,0 +1,23 @@
+﻿@page "/edit/{id:int}"
+@inject IMovieRepository Repository
+@inject NavigationManager Navigation
+
+<PageTitle>Edit Movie</PageTitle>
+
+<div class="row justify-content-center">
+    <div class="col-6 m-3">
+        <MovieForm IsEditMode="true" MovieId="@Id" OnValidMovieSubmit="EditMovie"></MovieForm>
+    </div>
+</div>
+
+@code {
+
+    [Parameter] public int Id { get; set; }
+
+    private async Task EditMovie(Movie movie)
+    {
+        await Repository.UpdateAsync(movie);
+        Navigation.NavigateTo("/");
+    }
+
+}

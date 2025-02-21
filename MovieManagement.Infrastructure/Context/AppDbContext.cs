@@ -10,12 +10,5 @@ namespace MovieManagement.Infrastructure.Context
         }
 
         public DbSet<Movie> Movies { get; set; }
-
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
-        {
-            modelBuilder.Entity<Movie>()
-                .Property(m => m.Category)
-                .HasConversion<string>();
-        }
     }
 }

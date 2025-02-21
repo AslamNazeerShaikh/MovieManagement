@@ -1,0 +1,40 @@
+$ ls
+CODE_OF_CONDUCT.md  LICENSE.md                   MovieManagement.DataAccess  MovieManagement.Infrastructure  MovieManagement.WebApi  README.md
+docs                MovieManagement.Application  MovieManagement.Domain      MovieManagement.sln             MovieManagement.WebUi   SECURITY.md
+
+$ pwd
+/home/aslamshaikh/Documents/Projects/MovieManagement
+
+$ dotnet list package
+
+Project 'MovieManagement.Domain' has the following package references
+   [net9.0]: No packages were found for this framework.
+
+Project 'MovieManagement.Application' has the following package references
+   [net9.0]: No packages were found for this framework.
+
+Project 'MovieManagement.Infrastructure' has the following package references
+   [net9.0]:
+   Top-level Package                           Requested   Resolved
+   > Microsoft.EntityFrameworkCore             9.0.2       9.0.2
+   > Microsoft.EntityFrameworkCore.Sqlite      9.0.2       9.0.2
+   > Microsoft.EntityFrameworkCore.Tools       9.0.2       9.0.2
+
+Project 'MovieManagement.WebUi' has the following package references
+   [net9.0]:
+   Top-level Package                               Requested   Resolved
+   > Microsoft.EntityFrameworkCore.Design          9.0.2       9.0.2
+   > Microsoft.EntityFrameworkCore.Relational      9.0.2       9.0.2
+
+$ dotnet list package --outdated
+
+The following sources were used:
+   https://api.nuget.org/v3/index.json
+
+The given project `MovieManagement.Domain` has no updates given the current sources.
+The given project `MovieManagement.Application` has no updates given the current sources.
+The given project `MovieManagement.Infrastructure` has no updates given the current sources.
+The given project `MovieManagement.WebUi` has no updates given the current sources.
+
+$ date
+Wed Feb 19 01:18:18 AM IST 2025
